@@ -1,9 +1,9 @@
 <template>
     <nav>
-      <router-link to="/">Home</router-link>
+      <router-link v-if="isLoggedIn" to="/">Home</router-link>
       <router-link v-if="!isLoggedIn" to="/login">Login</router-link>
       <router-link v-if="!isLoggedIn" to="/registro">Registro</router-link>
-      <router-link to="/about">About</router-link>
+      <router-link v-if="isLoggedIn" to="/about">About</router-link>
       <button class="btnLogout" v-if="isLoggedIn" @click="logout">Cerrar sesion</button>
     </nav>
     <main>
